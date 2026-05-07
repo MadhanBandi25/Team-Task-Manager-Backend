@@ -44,6 +44,13 @@ public class User {
     @Column(name = "is_deleted")
     private boolean isDeleted = false;
 
+    @Column(name = "is_verified")
+    private boolean isVerified = false;
+
+    private String otp;
+
+    private LocalDateTime otpExpiry;
+
     @OneToMany(mappedBy = "createdBy")
     private List<Project> createdProjects;
 
