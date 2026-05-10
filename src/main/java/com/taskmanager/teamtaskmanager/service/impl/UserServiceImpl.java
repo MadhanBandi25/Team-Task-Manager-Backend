@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserResponse> getAllUsers() {
-        return userRepository.findByIsDeletedFalse()
+        return userRepository.findByIsDeletedFalseAndIsVerifiedTrue()
                 .stream()
                 .map(UserMapper::toResponse)
                 .collect(Collectors.toList());
@@ -31,6 +31,14 @@ public class UserServiceImpl implements UserService {
     public UserResponse getUserById(Long id) {
         User user = getActiveUser(id);
         return UserMapper.toResponse(user);
+    }
+
+    @Override
+    public List<UserResponse> getVerifiedUsers() {
+        return userRepository.findByIsDeletedFalseAndIsVerifiedTrue()
+                .stream()
+                .map(UserMapper::toResponse)
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -36,4 +36,8 @@ public class UserController {
         userService.restoreUser(id);
         return ResponseEntity.ok("User restored successfully");
     }
+    @GetMapping("/verified")
+    public ResponseEntity<List<UserResponse>> getVerifiedUsers() {
+        return ResponseEntity.ok(userService.getVerifiedUsers());
+    }
 }
