@@ -846,5 +846,3 @@ config.setAllowedOrigins(List.of(
    ```
 
 ---
-
-*Built with ❤️ using Spring Boot*
