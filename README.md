@@ -376,7 +376,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 
 # ── JWT ───────────────────────────────────────────────
-jwt.secret=teamtaskmanagersecretkeyteamtaskmanagersecretkey123456
+jwt.secret=your_jwt_secret_key
 jwt.expiration=86400000
 
 # ── Gmail SMTP ────────────────────────────────────────
